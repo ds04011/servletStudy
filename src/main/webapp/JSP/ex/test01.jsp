@@ -42,12 +42,23 @@
 	<%!
 		public int sum(int n){
 			int sum =0;
-			for(int i = 0; i < n; i ++){
+			for(int i = 1; i <= n; i ++){
 				sum +=i;
 			}
-		return sum;
+			return sum;
 		}
 	%>
+	<h3>1부터 50까지 합</h3>
+	<%= sum(50) %>
+	
+	
+	<h4>4. 나이 구하기</h4>
+	
+	<% 
+	String birthDay = "20010820";
+	int age = 2024 -Integer.parseInt(birthDay.substring(0, 4));
+	%>
+	<h5>나이는 : <%=age %></h5>
 
 
 </body>
