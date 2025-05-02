@@ -19,11 +19,11 @@
 	
 	</div>
 	
-	<!-- 
-	<a href=" 에다가 주소 넣고, url 파라미터를 다르게 넣어줘서 url 버튼으로도 가능하겠다. 
-	
-	
-	 -->
+	<div class="container  m-0">
+		<h2>날짜 시간 링크</h2>
+		<a href  = "/jsp/ex/test03.jsp?option=time" class = "btn btn-success">현재 시간 확인</a>
+		<a href  = "/jsp/ex/test03.jsp?option=date" class = "btn btn-info">현재 날짜 확인</a>
+	</div>
 	
 	
 	
