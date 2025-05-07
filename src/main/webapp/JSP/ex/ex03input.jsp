@@ -27,6 +27,14 @@
 		</select>
 		<!--  밸류 값으로 실제 전달값 조정 가능, 사용자들에게 보이는 값과는 다를 수 있음.-->
 		<br>
+		
+		
+		<h4>좋아하는 음식 모두 고르디</h4>
+		<select>
+			<label>banana<input type="radio" name="fruit" value="banana" checked></label>
+			<label>apple<input type="radio" name="fruit" value="apple"></label>
+			<label>peach<input type="radio" name="fruit" value="peach"></label>
+		</select>
 		<button type ="submit">check</button>
 	</form>
 	

@@ -19,14 +19,21 @@
 		//좋아하는 과일 하나 
 		String fruit = request.getParameter("fruit");
 		
+		//좋아하는 음식 모두 전달 받기, 배열로 여러 값을 쭈욱 다 받아오는 것
+		String[] foodArray = request.getParameterValues("food");
+		String foods= "";
+		for(String i : foodArray){
+			foods += foods + i + " ";
+			
+		}
 		
 		
-		
-	
 	%>
+	
 	<h3> 닉네임은 <%=nickname %></h3>
 	<h3> 동물은 <%=animal %></h3>
 	<h3> 과일은 <%=fruit%></h3>
+	<h3> 음식은 <%= foods%></h3>
 	
 </body>
 </html>
