@@ -9,7 +9,7 @@
 <body>
 	
 	
-	<form method ="post" action="/jsp/ex/ex03,jsp">
+	<form method ="post" action="/jsp/ex/ex03.jsp">
 		<label>닉네임 : </label> <input type = "text" name="nickname">
 		
 		<h4>좋아하는 동물 고르세요.</h4>
