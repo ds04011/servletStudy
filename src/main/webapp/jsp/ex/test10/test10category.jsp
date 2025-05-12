@@ -6,11 +6,9 @@
 <head>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 <meta charset="UTF-8">
-<title>IPTV 채널 목록</title>
+<title>Insert title here</title>
 </head>
 <body>
-	
-	
 	<%
     List<Map<String, String>> list = new ArrayList<>();
     Map<String, String> map = new HashMap<String, String>() {{ put("ch", "5"); put("name", "SBS"); put("category", "지상파"); } };
@@ -49,6 +47,8 @@
     list.add(map);
     map = new HashMap<String, String>() {{ put("ch", "121"); put("name", "KBSN 스포츠"); put("category", "스포츠"); } };
     list.add(map);
+    
+    String category = request.getParameter("category");
 	%>
 	
 	
@@ -59,17 +59,18 @@
 		
 		<nav class="main-menu bg-danger">
 			<ul class="nav nav-fill font-weight-bold">
-				<li class="nav-item"><a href="#" class="nav-link text-white">전체</a></li>
-				<li class="nav-item"><a href="#" class="nav-link text-white">지상파</a></li>
-				<li class="nav-item"><a href="#" class="nav-link text-white">드라마</a></li>
-				<li class="nav-item"><a href="#" class="nav-link text-white">예능</a></li>
-				<li class="nav-item"><a href="#" class="nav-link text-white">영화</a></li>
-				<li class="nav-item"><a href="#" class="nav-link text-white">스포츠</a></li>
+				<li class="nav-item"><a href="/jsp/ex/test10/test10.jsp" class="nav-link text-white">전체</a></li>
+				<li class="nav-item"><a href="/jsp/ex/test10/test10category.jsp?category=지상파" class="nav-link text-white">지상파</a></li>
+				<li class="nav-item"><a href="/jsp/ex/test10/test10category.jsp?category=드라마" class="nav-link text-white">드라마</a></li>
+				<li class="nav-item"><a href="/jsp/ex/test10/test10category.jsp?category=예능" class="nav-link text-white">예능</a></li>
+				<li class="nav-item"><a href="/jsp/ex/test10/test10category.jsp?category=영화" class="nav-link text-white">영화</a></li>
+				<li class="nav-item"><a href="/jsp/ex/test10/test10category.jsp?category=스포츠" class="nav-link text-white">스포츠</a></li>
 				
 			</ul>
 		</nav>
 		
 		<section>
+		
 			<table class="table text-center">
 				<thead>
 					<tr>
@@ -79,13 +80,19 @@
 					</tr>
 				</thead>
 				<tbody>
+					<% for(Map i : list) { 
+							if(category.equals(i.get("category"))){%>
 					<tr>
-						<td>5</td>
-						<td>SBS</td>
-						<td>지상파</td>
+						<td><%= i.get("ch")%></td>
+						<td><%= i.get("name")%></td>
+						<td><%= i.get("category")%></td>
 					</tr>
+					<%} 
+					}%>
 				</tbody>
 			</table>
+			
+			
 		</section>
 		
 		<footer>
@@ -94,10 +101,6 @@
 	
 	
 	</div>
-	
-	
-	
-
 
 </body>
 </html>
