@@ -98,6 +98,8 @@
 			
 			<div class="search d-flex align-items-center">
 				<form method="get" action="/jsp/ex/test11/test11detail.jsp">
+				<!--  form 태그는 인라인, 인풋그룹은 블락 속성 그래서 어그러짐 
+				그래서 form 에 클래스 w-100 같은 걸 넣어줘야 크기가 조정이 됨  -->
 					<div class="input-group col-11">
 						<input type="text" class="form-control " name="title">
 						<div class="input-group-append">
