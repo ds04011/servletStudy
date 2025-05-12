@@ -1,16 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-     <%@page import ="java.util.*" %>
+    <%@ page import ="java.util.*" %>
 <!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 <meta charset="UTF-8">
-<title>책 보는 페이지</title>
+<title>Insert title here</title>
 </head>
 <body>
-	
-	<%
+
+<%
 	 List<Map<String, Object>> list = new ArrayList<>();
     Map<String, Object> map = new HashMap<String, Object>() {
         { 
@@ -55,41 +55,26 @@
         } 
     };
     list.add(map);
+    
+    int getId = Integer.parseInt(request.getParameter("id"));
 	
 	%>
-	<% %>
 	
-	<h2 class="text-center">책 목록</h2>
-	<table class="table text-center">
-		<thead>
-			<tr>
-				<th>id</th>
-				<th>표지</th>
-				<th>제목</th>
-			</tr>
-		</thead>
-		<tbody>
+	<div class="d-flex">
+	
+		<% for(Map i : list){ 
+			if((int)(i.get("id")) ==getId  ) {
+		%>
+		<image width = "200px" id="" alt="" src=<%=i.get("image") %>>
+		<div>
+			<h2><%= i.get("title") %></h2>
+			<h3 class="text-info"><%= i.get("author") %></h3>
+			<h4 class="text-gray"><%= i.get("publisher") %></h4>
+		</div>
+		<%}
+		} %>
 		
-			<%for(Map i : list){ %>
-			<tr>
-				<td><%= i.get("id") %></td>
-				<td><image width="100px" id="" alt="" src=<%=i.get("image") %>></td>
-				<td><h2 class="text-primary"><a href="/jsp/ex/test08detail.jsp?id=<%=i.get("id") %>"><%= i.get("title") %></a></h2></td>
-			</tr>
-			<%} %>
-			
-		</tbody>
-	
-	</table>
-	
-	<!--  그니까, 주소에 정보를 담아서 보내버리기, 이건 ok
-	궁금한건, 미리 만든페이지에서도 이 정보를 받아서 쓰려면, form 태그형태의 정보전달이 필요한데,
-	그렇게 하는건지, 아니면 그냥 주소정도만 받아서 보내는건지가 궁금한거다. 
-	간단하게 말해서 form 태그를 쓰는건지, a 태그 href 를 쓰는건지? 
-	a태그  href 면, 상세페이지의 주소를 맵정보로 짜서 반복문 주소로 넣으면되고
-	form 태그면, hidden 속성으로 정보를 담는다? -->
-	
-	
+	</div>
 
 </body>
 </html>
