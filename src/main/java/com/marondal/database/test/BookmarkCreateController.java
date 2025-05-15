@@ -18,8 +18,6 @@ public class BookmarkCreateController extends HttpServlet{
 		MysqlService mysqlService = MysqlService.getInstance();
 		mysqlService.connect();
 		
-		
-		
 		String name = request.getParameter("name");
 		String url = request.getParameter("url");
 		
@@ -31,8 +29,5 @@ public class BookmarkCreateController extends HttpServlet{
 		int count = mysqlService.update(query);
 		response.sendRedirect("/db/bookmark/list.jsp");
 		
-		
-		
 	}
-
 }

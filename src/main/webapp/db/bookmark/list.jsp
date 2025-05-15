@@ -34,7 +34,7 @@
 			<tr>
 				<td><%= i.get("name") %></td>
 				<td><a href="<%= i.get("url") %>"><%= i.get("url") %></a></td>
-				<td><a href="#" class="text-info">삭제</a></td>
+				<td><a href="/db/bookmark/delete?id=<%= i.get("id") %>" class="text-info">삭제</a></td>
 			</tr>
 			<% } %>
 		</tbody>

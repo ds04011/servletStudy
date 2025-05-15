@@ -29,7 +29,6 @@ public class MysqlService {
 		
 		try {
 		DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
-		
 		//접속에 필요한 정보, 주소 포트 DB이름, 사용자이름, 비밀번호
 		String url = "jdbc:mysql://localhost:3306/ds04011_2025";
 		String username = "root";
